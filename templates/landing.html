@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} ABOUT bookList: {% endblock %}</h1>
+    <br>
+    <div class="welcome">
+        <img src="https://raw.githubusercontent.com/grassLEE/grassleeblog/main/images/bookApp.png">
+        <br>
+        {% for mesg in get_flashed_messages() %}
+            <h2>{{ mesg }}</h2>
+        {% endfor %}
+        <form action="greet" method="post">
+
+            <br>
+            <input type="text" name="name_input">
+            <br>
+            <input type="submit" value="GREET" id="greet">
+        </form>
+    </div>
+{% endblock %}

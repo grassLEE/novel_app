@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+<style>
+    body {
+        background-color: #87b8a8;
+        text-align: center;
+        font-family:'Courier New', Courier, monospace
+    }
+
+    img {
+        margin: 60px 0 30px 0;
+        width: 300px;
+    }
+
+    .title {
+        margin: 5px;
+        font-family:'Courier New', Courier, monospace;
+
+    }
+
+    .content {
+        margin: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .Book {
+        flex: 20%;
+        padding: 10%;
+        margin: 5%;
+        background-color: #808000;
+        inline-size: 100%;
+    }
+
+    .genre {
+            padding: 10px;
+            margin: 5px;
+            background-color: #0f5e4c;
+            color: #004835;
+        }
+
+    .name a {
+            color: #00a36f;
+            text-decoration: none;
+        }
+
+    nav a {
+            color: #050505;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+        
+</style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">bookList</a>
+        <a href="{{ url_for('addBook') }}">addBook</a>
+        <a href="{{ url_for('landing')}}">ABOUT bookList</a>
+    </nav>
+    <hr>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <span class="title">
+        <h1>{% block title %} {{ book.author }} {{ book.title }} {% endblock %}</h1>
+    </span>
+    <div class="content">
+        <div class="book">
+            <p><b>#{{ book.id }}</b></p>
+            <b>
+                <p class="bookName">{{ book.title }} {{ book.author }}</p>
+            </b>
+            <p>{{ book.pages }}</p>
+            <p>Read: {{ book.created_at }}</p>
+        </div>
+    </div>
+{% endblock %}
